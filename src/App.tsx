@@ -136,7 +136,7 @@ function HomePage({ favorites, toggle }: { favorites: string[]; toggle: (id: str
     return matchesQuery && matchesCategory && matchesArea && matchesDrawing
   }).sort((a, b) => sort === 'rating' ? b.rating - a.rating || b.reviewCount - a.reviewCount : sort === 'distance' ? a.access.minutes - b.access.minutes : (b.rating * 10 - b.access.minutes / 5) - (a.rating * 10 - a.access.minutes / 5))
   return <Shell>
-    <section className="home-intro"><div><span className="hello">こんにちは、{user.name.split(' ')[1]}さん</span><h1>今日は何が<br /><em>食べたい？</em></h1></div><span className="steam">♨</span></section>
+    <section className="home-intro"><div><span className="hello">こんにちは、{user.name.split(' ')[1]}さん</span><h1>今日は何が<br /><em>食べたい？</em></h1></div></section>
     <section className="location-panel"><span className="location-icon"><LocateFixed /></span><div><small>デモ現在地</small><strong>三軒茶屋駅付近</strong><span>この場所から近い順におすすめしています</span></div><button onClick={() => { setArea('すべてのエリア'); setDrawnIds(null) }}>現在地に戻す</button></section>
     <section className="search-panel">
       <label className="search-box"><Search /><input value={search} onChange={e => setSearch(e.target.value)} placeholder="料理やお店を検索" /></label>
